@@ -30,11 +30,11 @@ def main():
     twitter = get_twitter_instance()
 
     image_file = get_next_image()['name']
-    image = open('images/' + image_file, 'rb')
+    image = open('peak-images/' + image_file, 'rb')
 
     response = twitter.upload_media(media=image)
 
-    twitter.update_status(status="bud", media_ids=[response['media_id']])
+    twitter.update_status(status="", media_ids=[response['media_id']])
 
     update_image_list(image_file)
 
